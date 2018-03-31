@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<!-- START: COPY THIS CONTENT: IT HAS A HTML SCREEN PREPARED WITH DOZENS OF DIVS AND PANELS, REFERRING TO PREDEFINED CSS 
+			So all that is left for us to do is refer to a JQuery library(make this dumb HTML understand JQUERY terminology) 
+			n start playing-->
+    <title></title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+
+    <style type="text/css">
+    .special {
+        color: blue;
+    }
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li>one</li>
+        <li class="special">two</li>
+        <li>three</li>
+        <li>
+            <ul class="sublist">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </li>
+    </ul>
+	<!-- STOP: COPY THIS CONTENT -->
+    
+    <!--  NOTE: For any JQuery code this library is must, if you look closely the JQuery functions are in turn written in javascript 
+    			Hence whatever browser/ page supports JS they are bound to support JQuery-->
+    			
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    
+    <script>
+    
+    $(function(){
+    	
+    	$('li').on('click',function(){
+    		
+    		//$(this).next().hide();
+    		//$(this).next().remove();
+    		//$(this).siblings().hide();
+    		//$(this).siblings().addClass('special');
+    		$(this).parent().addClass('special');
+    		
+    		// It will try to find the closest list and then change it
+    		//$(this).closest('.list').addClass('special');
+    		
+    		
+    		
+    	});
+    	
+    	
+    	
+    })
+    
+    </script>
+    
+</body>
+</html>

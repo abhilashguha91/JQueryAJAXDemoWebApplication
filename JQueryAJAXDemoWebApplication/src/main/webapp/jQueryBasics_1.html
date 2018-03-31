@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<!-- START: COPY THIS CONTENT: IT HAS A HTML SCREEN PREPARED WITH DOZENS OF DIVS AND PANELS, REFERRING TO PREDEFINED CSS 
+			So all that is left for us to do is refer to a JQuery library(make this dumb HTML understand JQUERY terminology) 
+			n start playing-->
+<head>
+    <title>jQuery Tutorial</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <style type="text/css">
+    .jumbotron {
+        text-align: center;
+    }
+    button {
+        width: 100px;
+        height: 40px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>JQ!</h1>
+            <button id="btn1">#btn1</button>
+            <button id="btn2">#btn2</button>
+            <button id="btn3">#btn3</button>
+            <button id="btn4">#btn4</button>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-3">
+                <div id="panel1" class="panel panel-primary">
+                    <div class="panel-heading">
+                        #panel1
+                    </div>
+                    <div class="panel-body">
+                        content
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div id="panel2" class="panel panel-primary">
+                    <div class="panel-heading">
+                        #panel2
+                    </div>
+                    <div class="panel-body">
+                        content
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div id="panel3" class="panel panel-primary">
+                    <div class="panel-heading">
+                        #panel3
+                    </div>
+                    <div class="panel-body">
+                        content
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div id="panel4" class="panel panel-primary">
+                    <div class="panel-heading">
+                        #panel4
+                    </div>
+                    <div class="panel-body">
+                        content
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- STOP: COPY THIS CONTENT -->
+    
+    <!--  NOTE: For any JQuery code this library is must, if you look closely the JQuery functions are in turn written in javascript 
+    			Hence whatever browser/ page supports JS they are bound to support JQuery-->
+    
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+    
+    // tells us execute this when the entire document is done loading
+    $(document).ready(function(){
+    	
+    	// use either single or double quotes both are accepted syntax
+    	// # is the component selector just as in CSS, finds by id
+    	$('#panel1').hide(300);
+    	
+    	// these can be chained 
+    	$('#panel2').hide(300).show(300).delay(1000).hide(300).show(300);
+    });
+    
+    // a single script can have multiple $(document).ready(function(){}) they will just execute one by one in the order they are placed for a same component
+    // For different components they will run simultaneously, so that one part of the page doesn't depend on the running of other
+    //another way to write $(document).ready(function(){});
+    
+	$(function(){
+    	
+    	
+		$('#panel1').slideUp(300).fadeToggle(1000).fadeToggle(1000).toggle(1000);
+    	
+    });
+	
+	// Now that we are done playing with showing and hiding, let's manoeuvre some CSSs
+	$(function(){
+    	
+		$('#panel2').slideUp(300).fadeToggle(1000).fadeToggle(1000).toggle(1000);
+		
+		// the css function of every component JQuery refers can directly make changes to it's CSS, this will change the CSS in runtime
+		$('#panel2').css({
+			color:'red', 
+			fontWeight:'bold',
+			opacity:'0.5'});
+		// but there is a little trick to this, this command is to change CSS so it starts running just as soon as the function loads, hence the color change will happen immediatedly
+		// after function opens even if there are a bunch of lines of code before this line.
+    	
+    });
+	
+	// Coming to the $ of jQuery the $ is chosen wisely as $ has no special meaning in javascript, it's just like a simple 'a' or a 'm' maybe
+	// But when we write $ it invokes the jQuery function in jQuery which is heavily overloaded and responds according to what you pass to it
+	// we pass different JS functions but still it accepts it
+	// $ is synonomous to jQuery
+	jQuery(function(){
+    	
+		$('#panel3').slideUp(300).fadeToggle(1000).fadeToggle(1000).toggle(1000);
+		
+		// We can change what is written in the html text of a button, panel text box and everything using html 
+		$('#btn1').html('Press ME');
+		
+    });
+	
+    </script>
+
+    
+
+</body>
+</html>
