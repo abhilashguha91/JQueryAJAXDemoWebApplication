@@ -28,6 +28,7 @@ $(function() {
   // the success and error are methods to be executed in case of success and error.
   // data will be the data field
   
+  
   $.ajax({
     type: 'GET',
     url: 'http://rest.learncode.academy/api/learncode/friends',
